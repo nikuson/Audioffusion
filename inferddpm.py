@@ -111,6 +111,9 @@ def infer(args):
     model.eval()
     sampled_images = diffusion.sample(model, n=1)
     save_images(sampled_images, os.path.join("results", f"tes47t.jpg"))
+    image = Image.open(os.path.join("results", f"tes47t.jpg"))
+    image = image.resize((512, 512))
+    image.save(os.path.join("results", f"tes47t.jpg"))
 
 def launch():
     import argparse
